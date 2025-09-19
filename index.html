@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gandhi Fellowship Alumni Dashboard 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-title">
+                    <h1>Gandhi Fellowship Alumni Dashboard 2025</h1>
+                    <p class="header-subtitle">Connecting, Growing, and Transforming Together</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Summary Statistics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalAlumni">2,235</div>
+                    <div class="stat-label">Total Alumni</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalBatches">15</div>
+                    <div class="stat-label">Batches (1-16)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="activeProfessionals">1,263</div>
+                    <div class="stat-label">Active Professionals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="mentoringWilling">1,763</div>
+                    <div class="stat-label">Willing to Mentor</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="placementSupporters">1,792</div>
+                    <div class="stat-label">Placement Supporters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="dashboard-nav">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="geographic">Geographic Distribution</button>
+                <button class="tab-btn" data-tab="professional">Professional Analysis</button>
+                <button class="tab-btn" data-tab="engagement">Engagement Analysis</button>
+                <button class="tab-btn" data-tab="directory">Alumni Directory</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Big Bet Distribution</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="bigBetChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Work Status Breakdown</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="workStatusChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container full-width">
+                        <h3>Alumni Growth by Batch</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 400px;">
+                            <canvas id="batchChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic Distribution Tab -->
+            <div class="tab-content" id="geographic">
+                <div class="geo-section">
+                    <h3>Top 15 States by Alumni Count</h3>
+                    <div class="chart-container">
+                        <div class="chart-wrapper" style="position: relative; height: 500px;">
+                            <canvas id="stateChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Analysis Tab -->
+            <div class="tab-content" id="professional">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Work Status Analysis</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="workStatusDetailChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Big Bet Categories</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="bigBetPieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="professional-insights">
+                    <div class="insight-card">
+                        <h4>Key Professional Insights</h4>
+                        <ul>
+                            <li><strong>56.5%</strong> of alumni are actively working as intrapreneurs</li>
+                            <li><strong>13.5%</strong> are currently not working</li>
+                            <li><strong>4.7%</strong> have become entrepreneurs</li>
+                            <li><strong>2.6%</strong> are pursuing higher studies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engagement Analysis Tab -->
+            <div class="tab-content" id="engagement">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Mentoring Willingness</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="mentoringChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Placement Support</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="placementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="engagement-insights">
+                    <div class="insight-card">
+                        <h4>Engagement Highlights</h4>
+                        <ul>
+                            <li><strong>78.9%</strong> of alumni are willing to mentor others</li>
+                            <li><strong>80.2%</strong> are ready to support placement activities</li>
+                            <li><strong>311 alumni</strong> can dedicate 10 hours in 6 months for mentoring</li>
+                            <li><strong>178 alumni</strong> can provide 20 hours in 12 months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alumni Directory Tab -->
+            <div class="tab-content" id="directory">
+                <div class="directory-header">
+                    <h3>Alumni Directory</h3>
+                    <div class="directory-controls">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, batch, location...">
+                        <select id="batchFilter" class="form-control">
+                            <option value="">All Batches</option>
+                        </select>
+                        <select id="stateFilter" class="form-control">
+                            <option value="">All States</option>
+                        </select>
+                        <select id="workStatusFilter" class="form-control">
+                            <option value="">All Work Status</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="directory-table-container">
+                    <div class="table-responsive">
+                        <table class="directory-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Batch</th>
+                                    <th>Big Bet</th>
+                                    <th>State</th>
+                                    <th>Work Status</th>
+                                    <th>Mentoring</th>
+                                    <th>Placement Support</th>
+                                </tr>
+                            </thead>
+                            <tbody id="directoryTableBody">
+                                <tr>
+                                    <td colspan="7" class="loading-cell">Loading alumni data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>&copy; 2025 Gandhi Fellowship. All rights reserved. | Empowering Leaders, Transforming Lives</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
